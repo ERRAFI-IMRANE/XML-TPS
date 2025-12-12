@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Hopital xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="shema.xsd">
+
+  <Medecins>
+    <Medecin idMedecin="M001">
+      <CIN>AA123456</CIN>
+      <Genre>Masculin</Genre>
+      <Nom>Benali</Nom>
+      <Prenom>Omar</Prenom>
+      <Telephones>
+        <Telephone type="Portable">0612345678</Telephone>
+        <Telephone type="Fixe">0523456789</Telephone>
+      </Telephones>
+      <Emails>
+        <Email type="Professionnel">omar.benali@hopital.ma</Email>
+      </Emails>
+      <Specialite>Cardiologie</Specialite>
+      <Service>Cardiologie</Service>
+    </Medecin>
+  </Medecins>
+
+  <Patients>
+    <Patient idPatient="P001">
+      <CIN>BB654321</CIN>
+      <Genre>Feminin</Genre>
+      <Nom>El Amrani</Nom>
+      <Prenom>Sara</Prenom>
+      <Telephones>
+        <Telephone type="Portable">0678123456</Telephone>
+      </Telephones>
+      <Emails>
+        <Email type="Personnel">sara.elamrani@gmail.com</Email>
+      </Emails>
+      <DateNaissance>1995-04-12</DateNaissance>
+      <Adresses>
+        <Adresse>
+          <Rue>Avenue Hassan II</Rue>
+          <Numero>24</Numero>
+          <Ville>Safi</Ville>
+        </Adresse>
+      </Adresses>
+    </Patient>
+  </Patients>
+
+  <Medicaments>
+    <Medicament codeMedicament="MD001">
+      <NomCommercial>CardioPlus</NomCommercial>
+      <Prix>85.50</Prix>
+      <PrincipeActif>Aspirine</PrincipeActif>
+      <Forme>Comprime</Forme>
+      <DatePeremption>2026-05-01</DatePeremption>
+      <Laboratoire>PharmaMed</Laboratoire>
+    </Medicament>
+  </Medicaments>
+
+  <Consultations>
+    <Consultation codeConsultation="C001" idMedecin="M001" idPatient="P001">
+      <Date>2025-11-08</Date>
+      <Heure>10:30:00</Heure>
+      <Diagnostic>Hypertension artérielle</Diagnostic>
+      <MedicamentsPrescrits>
+        <Prescription codeMedicament="MD001">
+          <Posologie>1 comprimé matin et soir</Posologie>
+          <Duree>10 jours</Duree>
+        </Prescription>
+      </MedicamentsPrescrits>
+      <ControleMedical>
+        <Avis idMedecin="M001">
+          <Commentaire>Diagnostic confirmé</Commentaire>
+        </Avis>
+      </ControleMedical>
+    </Consultation>
+  </Consultations>
+
+</Hopital>

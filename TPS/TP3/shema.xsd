@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+  <!-- ===================== -->
+  <!-- Root element          -->
+  <!-- ===================== -->
+  <xs:element name="Hopital">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Medecins" type="ListeMedecins"/>
+        <xs:element name="Patients" type="ListePatients"/>
+        <xs:element name="Medicaments" type="ListeMedicaments"/>
+        <xs:element name="Consultations" type="ListeConsultations"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- ===================== -->
+  <!-- Medecins              -->
+  <!-- ===================== -->
+  <xs:complexType name="ListeMedecins">
+    <xs:sequence>
+      <xs:element name="Medecin" type="MedecinType" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="MedecinType">
+    <xs:sequence>
+      <xs:element name="CIN" type="xs:string"/>
+      <xs:element name="Genre" type="GenreType"/>
+      <xs:element name="Nom" type="xs:string"/>
+      <xs:element name="Prenom" type="xs:string"/>
+      <xs:element name="Telephones" type="ListeTelephones"/>
+      <xs:element name="Emails" type="ListeEmails"/>
+      <xs:element name="Specialite" type="xs:string"/>
+      <xs:element name="Service" type="ServiceType"/>
+    </xs:sequence>
+    <xs:attribute name="idMedecin" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:simpleType name="GenreType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Masculin"/>
+      <xs:enumeration value="Feminin"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ServiceType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Cardiologie"/>
+      <xs:enumeration value="Pediatrie"/>
+      <xs:enumeration value="Chirurgie"/>
+      <xs:enumeration value="Radiologie"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- ===================== -->
+  <!-- Patients              -->
+  <!-- ===================== -->
+  <xs:complexType name="ListePatients">
+    <xs:sequence>
+      <xs:element name="Patient" type="PatientType" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PatientType">
+    <xs:sequence>
+      <xs:element name="CIN" type="xs:string"/>
+      <xs:element name="Genre" type="GenreType"/>
+      <xs:element name="Nom" type="xs:string"/>
+      <xs:element name="Prenom" type="xs:string"/>
+      <xs:element name="Telephones" type="ListeTelephones"/>
+      <xs:element name="Emails" type="ListeEmails"/>
+      <xs:element name="DateNaissance" type="xs:date"/>
+      <xs:element name="Adresses" type="ListeAdresses"/>
+    </xs:sequence>
+    <xs:attribute name="idPatient" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <!-- ===================== -->
+  <!-- Medicaments           -->
+  <!-- ===================== -->
+  <xs:complexType name="ListeMedicaments">
+    <xs:sequence>
+      <xs:element name="Medicament" type="MedicamentType" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="MedicamentType">
+    <xs:sequence>
+      <xs:element name="NomCommercial" type="xs:string"/>
+      <xs:element name="Prix" type="xs:decimal"/>
+      <xs:element name="PrincipeActif" type="xs:string"/>
+      <xs:element name="Forme" type="FormeType"/>
+      <xs:element name="DatePeremption" type="xs:date"/>
+      <xs:element name="Laboratoire" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="codeMedicament" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:simpleType name="FormeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Comprime"/>
+      <xs:enumeration value="Gelule"/>
+      <xs:enumeration value="Sirop"/>
+      <xs:enumeration value="Injection"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!-- ===================== -->
+  <!-- Consultations         -->
+  <!-- ===================== -->
+  <xs:complexType name="ListeConsultations">
+    <xs:sequence>
+      <xs:element name="Consultation" type="ConsultationType" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ConsultationType">
+    <xs:sequence>
+      <xs:element name="Date" type="xs:date"/>
+      <xs:element name="Heure" type="xs:time"/>
+      <xs:element name="Diagnostic" type="xs:string"/>
+      <xs:element name="MedicamentsPrescrits" type="ListePrescriptions"/>
+      <xs:element name="ControleMedical" type="ControleType" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="codeConsultation" type="xs:string" use="required"/>
+    <xs:attribute name="idMedecin" type="xs:string" use="required"/>
+    <xs:attribute name="idPatient" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="ListePrescriptions">
+    <xs:sequence>
+      <xs:element name="Prescription" type="PrescriptionType" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PrescriptionType">
+    <xs:sequence>
+      <xs:element name="Posologie" type="xs:string"/>
+      <xs:element name="Duree" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="codeMedicament" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <!-- ===================== -->
+  <!-- Controle medical      -->
+  <!-- ===================== -->
+  <xs:complexType name="ControleType">
+    <xs:sequence>
+      <xs:element name="Avis" type="AvisType" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AvisType">
+    <xs:sequence>
+      <xs:element name="Commentaire" type="xs:string"/>
+    </xs:sequence>
+    <xs:attribute name="idMedecin" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <!-- ===================== -->
+  <!-- Types auxiliaires     -->
+  <!-- ===================== -->
+  <xs:complexType name="ListeTelephones">
+    <xs:sequence>
+      <xs:element name="Telephone" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attribute name="type" use="required">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="Portable"/>
+                    <xs:enumeration value="Fixe"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:attribute>
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ListeEmails">
+    <xs:sequence>
+      <xs:element name="Email" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attribute name="type" use="required">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:enumeration value="Personnel"/>
+                    <xs:enumeration value="Professionnel"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:attribute>
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ListeAdresses">
+    <xs:sequence>
+      <xs:element name="Adresse" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Rue" type="xs:string"/>
+            <xs:element name="Numero" type="xs:string"/>
+            <xs:element name="Ville" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

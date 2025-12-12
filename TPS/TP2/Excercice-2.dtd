@@ -1,0 +1,25 @@
+<!ELEMENT Hopital (Nom,Medecin+)>
+<!ELEMENT Medecin (Nom,Prenom,Specialite?,Service?,Phone*,Email*,Date,Adresse,Photo)>
+<!ELEMENT Nom (#PCDATA)>
+<!ELEMENT Prenom (#PCDATA)>
+<!ELEMENT Specialite (#PCDATA)>
+<!ELEMENT Service (#PCDATA)>
+<!ELEMENT Phone (#PCDATA)>
+<!ELEMENT Email (#PCDATA)>
+<!ELEMENT Date EMPTY>
+<!ELEMENT Adresse (Rue,Numero,codePostal,Ville)>
+<!ELEMENT Rue (#PCDATA)>
+<!ELEMENT Numero (#PCDATA)>
+<!ELEMENT codePostal (#PCDATA)>
+<!ELEMENT Ville (#PCDATA)>
+<!ELEMENT Photo EMPTY>
+
+<!ATTLIST Hopital idDirecteur IDREF #REQUIRED>
+<!ATTLIST Medecin id ID #REQUIRED>
+<!ATTLIST Phone type (GSM | fixe) "GSM">
+<!ATTLIST Email type (personnel | professionnel) "personnel">
+<!ATTLIST Photo scr CDATA #REQUIRED type (PNG | JPG) "PNG">
+<!ATTLIST Medecin grade (interne | resident | specialite | professeur) #REQUIRED>
+<!ATTLIST Date Jour CDATA #REQUIRED>
+<!ATTLIST Date Month CDATA #REQUIRED>
+<!ATTLIST Date Annee CDATA #REQUIRED>

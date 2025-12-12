@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<Univeristy>
+    <Module id="1">
+        <Code></Code>
+        <Intitules>
+            <Intitule id="1"></Intitule>
+            <Intitule id="2"></Intitule>
+        </Intitules>
+        <Description></Description>
+        <NombreHeures></NombreHeures>
+        <Enseignants>
+            <Enseignant id="1">
+                <Nom></Nom>
+                <Prenom></Prenom>
+                <Emails>
+                    <Email id="1"></Email>
+                    <Email id="2"></Email>
+                </Emails>
+                <Phones>
+                    <Phone id="1"></Phone>
+                    <Phone id="2"></Phone>
+                </Phones>
+            </Enseignant>
+            <Enseignant id="2">
+                <Nom></Nom>
+                <Prenom></Prenom>
+                <Email></Email>
+                <Phone></Phone>
+            </Enseignant>
+        </Enseignants>
+    </Module>
+</Univeristy>

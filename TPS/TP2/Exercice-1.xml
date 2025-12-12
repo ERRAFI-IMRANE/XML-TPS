@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Publications SYSTEM "Exercice-1.dtd">
+<Publications>
+    <Publication CodePublication="P001" PremierAuteur="A001">
+        <Titre>Hackathon</Titre>
+        <Auteur IdAuteur="A001" Role="Principale">
+            <Nom></Nom>
+            <Prenom></Prenom>
+            <Affiliation></Affiliation>
+        </Auteur>
+        <Auteur IdAuteur="A002" Role="CoAuteur">
+            <Nom></Nom>
+            <Prenom></Prenom>
+            <Affiliation></Affiliation>
+        </Auteur>
+        <Auteur IdAuteur="A003" Role="Correspondant">
+            <Nom></Nom>
+            <Prenom></Prenom>
+            <Affiliation></Affiliation>
+        </Auteur>
+        <Date Jour="17" Month="05" Annee="2025"/>
+        <Type></Type>
+    </Publication>
+    <Publication CodePublication="P002" PremierAuteur="A004">
+        <Titre>Hackathon</Titre>
+        <Auteur IdAuteur="A004" Role="Principale">
+            <Nom></Nom>
+            <Prenom></Prenom>
+            <Affiliation></Affiliation>
+        </Auteur>
+        <Auteur IdAuteur="A005" Role="CoAuteur">
+            <Nom></Nom>
+            <Prenom></Prenom>
+            <Affiliation></Affiliation>
+        </Auteur>
+        <Auteur IdAuteur="A006" Role="Correspondant">
+            <Nom></Nom>
+            <Prenom></Prenom>
+            <Affiliation></Affiliation>
+        </Auteur>
+        <Date Jour="16" Month="05" Annee="2025"/>
+        <Type></Type>
+    </Publication>
+    <Publication CodePublication="P003" PremierAuteur="A004">
+        <Titre>Hackathon</Titre>
+        <Auteur IdAuteur="A007" Role="Principale">
+            <Nom></Nom>
+            <Prenom></Prenom>
+            <Affiliation></Affiliation>
+        </Auteur>
+        <Auteur IdAuteur="A008" Role="CoAuteur">
+            <Nom></Nom>
+            <Prenom></Prenom>
+            <Affiliation></Affiliation>
+        </Auteur>
+        <Auteur IdAuteur="A009" Role="Correspondant">
+            <Nom></Nom>
+            <Prenom></Prenom>
+            <Affiliation></Affiliation>
+        </Auteur>
+        <Date Jour="16" Month="05" Annee="2025"/>
+        <Type></Type>
+    </Publication>
+</Publications>

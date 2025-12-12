@@ -1,0 +1,19 @@
+<!ENTITY % unique "ID #REQUIRED">
+<!ELEMENT Publications (Publication+)>
+<!ELEMENT Publication (Titre, Auteur+, Date, Type, Resume?)>
+<!ELEMENT Titre (#PCDATA)>
+<!ELEMENT Auteur (Nom, Prenom, Affiliation)>
+<!ELEMENT Nom (#PCDATA)>
+<!ELEMENT Prenom (#PCDATA)>
+<!ELEMENT Affiliation (#PCDATA)>
+<!ELEMENT Date EMPTY>
+<!ELEMENT Resume (#PCDATA|MotClef)*>
+<!ELEMENT MotClef (#PCDATA)>
+<!ELEMENT Type (#PCDATA)>
+<!ATTLIST Publication PremierAuteur IDREF #REQUIRED>
+<!ATTLIST Publication CodePublication %unique;>
+<!ATTLIST Date Jour CDATA #IMPLIED>
+<!ATTLIST Date Month CDATA #IMPLIED>
+<!ATTLIST Date Annee CDATA #REQUIRED>
+<!ATTLIST Auteur IdAuteur ID #REQUIRED>
+<!ATTLIST Auteur Role (Principale|CoAuteur|Correspondant|Superviseur) #REQUIRED>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="./medecins.xsl"?>
+<Hopital>
+  <Medecins>
+    <Medecin idMedecin="M001">
+      <CIN>AA123456</CIN>
+      <Genre>Masculin</Genre>
+      <Nom>Benali</Nom>
+      <Prenom>Omar</Prenom>
+      <Telephones>
+        <Telephone type="Portable">0612345678</Telephone>
+        <Telephone type="Fixe">0523456789</Telephone>
+      </Telephones>
+      <Emails>
+        <Email type="Professionnel">omar.benali@hopital.ma</Email>
+      </Emails>
+      <Specialite>Cardiologie</Specialite>
+      <Service>Cardiologie</Service>
+    </Medecin>
+  </Medecins>
+</Hopital>
