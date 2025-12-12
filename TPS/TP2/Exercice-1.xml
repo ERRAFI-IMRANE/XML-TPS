@@ -41,24 +41,4 @@
         <Date Jour="16" Month="05" Annee="2025"/>
         <Type></Type>
     </Publication>
-    <Publication CodePublication="P003" PremierAuteur="A004">
-        <Titre>Hackathon</Titre>
-        <Auteur IdAuteur="A007" Role="Principale">
-            <Nom></Nom>
-            <Prenom></Prenom>
-            <Affiliation></Affiliation>
-        </Auteur>
-        <Auteur IdAuteur="A008" Role="CoAuteur">
-            <Nom></Nom>
-            <Prenom></Prenom>
-            <Affiliation></Affiliation>
-        </Auteur>
-        <Auteur IdAuteur="A009" Role="Correspondant">
-            <Nom></Nom>
-            <Prenom></Prenom>
-            <Affiliation></Affiliation>
-        </Auteur>
-        <Date Jour="16" Month="05" Annee="2025"/>
-        <Type></Type>
-    </Publication>
 </Publications>

@@ -28,17 +28,4 @@
         </Adresse>
         <Photo scr=""/>
     </Medecin>
-    <Medecin id="M003" grade="specialite">
-        <Nom>Errafi</Nom>
-        <Prenom>Imrane</Prenom>
-        <Specialite>Cardio</Specialite>
-        <Date Jour="09" Month="06" Annee="2005"/>
-        <Adresse>
-            <Rue>Sidi Rached Lalla haffsa</Rue>
-            <Numero>8</Numero>
-            <codePostal>51300</codePostal>
-            <Ville>Azrou</Ville>
-        </Adresse>
-        <Photo scr=""/>
-    </Medecin>
 </Hopital>
